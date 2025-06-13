@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+header{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+img{
+  top: 800px;
+width: 400px;
+height:400px;
+
+}
+button{
+  border-radius: 10px;
+  border-color: #717171;
+  border-style: inset;
+  background-color: rgb(8, 202, 8);
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.palavra{
+  position: absolute;
+  top: 200px;
+left: 900px;
+
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+header{
+  background-color: #d8d8d2;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  border-color: black;
+  padding: 10px;
+  
+}
+
+
+div{
+
+text-align: center;
+}
+
+.slider {
+  position: relative;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background-color: #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #8f8b8b;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.titulo{
+
+left: 900px;
+top: 170px;
+}
+
+.cabra{
+
+left: 900px;
+top: 210px;
+
+}
+
+.preço{
+
+left: 900px;
+top: 250px;
+
+}
+
+.comprar{
+
+left: 900px;
+top: 400px;
+  
+}
+
+
+    </style>
+</head>
+<body>
+ <header>
+  <img src="Skey8.png" alt="Banner principal">
+  
+</header>
+<hr>
+
+<div class="produto">
+ 
+  
+  
+<div class="slider">
+  <div class="slides">
+    <img src="Opera Instantâneo_2025-06-01_140552_www.printful.com.png" alt="Imagem 1" class="slide active">
+    <img src="Opera Instantâneo_2025-06-01_183140_www.printful.com.png" alt="Imagem 2" class="slide">
+    
+  </div>
+
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+
+  </div>
+
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+  <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  function prevSlide() {
+    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  showSlide(currentSlide); // inicia mostrando o primeiro slide
+
+</script>
+<hr>
+
+ <div class="palavra">
+<div class="titulo">
+  <h1>Moleton Skey8</h1>
+</div>
+ <div class="cabra">
+  <h3> a melhor em conforto praticidade e estilo!</h3>
+ </div>
+  <div class="preço">
+    <h2>R$ 199,90</h2>
+  </div>
+  <div class="comprar">
+<a href="compraBlusa.html"><button>Comprar</button></a>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
